@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitas Negeri Padang</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: url('rektorat.jpg') no-repeat center center/cover;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.7);
+        }
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            filter: blur(3px);
+            z-index: 0;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px; /* Adjust to desired size */
+            height: auto;   /* Maintain aspect ratio */
+        }
+        header h1 {
+            position: relative;
+            z-index: 1;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0055a5;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #003366;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-background"></div>
+        <center><img src="logo_unp.png" alt="Logo UNP" class="logo"></center>
+        <h1>Penerimaan Mahasiswa Baru</h1>
+        <h1>Universitas Negeri Padang</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Pendaftaran.html">Pendaftaran</a>
+        <a href="jadwal.html">Jadwal</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+    <div class="container">
+        <section id="home">
+            <h2>Selamat Datang di UNP</h2>
+           <img src="brosur.jpg" alt="brosur">
+           <br>
+           <br>
+           <img src="brosur2.jpg" alt="brosur2">
+        </section>
+        <section id="pendaftaran">
+            <h2>Informasi Pendaftaran</h2>
+            <p>Silakan kunjungi <a href="https://unp.ac.id" target="_blank">unp.ac.id</a> untuk informasi lebih lanjut.</p>
+        </section>
+        <section id="jadwal">
+            <h2>Jadwal Penerimaan</h2>
+            <ul>
+                <li>Pendaftaran: 1 Maret - 30 Juni</li>
+                <li>Ujian Seleksi: 15 Juli</li>
+                <li>Pengumuman: 30 Juli</li>
+            </ul>
+        </section>
+        <section id="kontak">
+            <h2>Kontak</h2>
+            <p>Email: pmb@unp.ac.id | Telepon: (0751) 123456</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Universitas Negeri Padang</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Mahasiswa Baru UNP</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            position: relative;
+            color: #ffffff;
+            padding: 80px;
+        }
+        .header-background {
+            background: url("rektorat.jpg") no-repeat center center/cover; 
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        /* Add styles for the logo */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px; /* Adjust to desired size */
+            height: auto;   /* Maintain aspect ratio */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0055a5;
+            padding: 10px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Menambahkan sudut melengkung */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Menghilangkan jarak antara sel */
+        }
+        td {
+            padding: 10px;
+            vertical-align: top; /* Menyelaraskan teks ke atas */
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px; /* Menambahkan sudut melengkung */
+            box-sizing: border-box; /* Menghitung padding dalam lebar */
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px; /* Menambahkan jarak antara checkbox/radio dan label */
+        }
+        input[type="submit"],
+        input[type="reset"],
+        input[type="button"] {
+            background-color: #0055a5;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px; /* Menambahkan sudut melengkung */
+            cursor: pointer; /* Mengubah kursor saat hover */
+            margin-right: 10px; /* Menambahkan jarak antar tombol */
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="button"]:hover {
+            background-color: #003366; /* Mengubah warna saat hover */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #003366;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-background"></div>
+        <center><img src="logo_unp.png" alt="Logo UNP" class="logo"></center>
+    </header>
+    <nav>
+        <h3><font color="white" face="arial">Form Pendaftaran</font></h3>
+    </nav>
+    <div class="container">
+        <form action="" method="post">
+            <h2>Data Orangtua</h2>
+            <table>
+                <tr>
+                    <td>Nama Ayah</td>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <td> Pekerjaan </td>
+                    <td><select>
+                        <option> --Pilih-- </option>
+                        <option> PNS/TNI/Polri </option>
+                        <option> Pegawai Swasta </option>
+                        <option> Wiraswasta </option>
+                        <option> Pegawai BUMN </option>
+                        <option> Guru non PNS </option>
+                        <option> Dosen non PNS </option>
+                        <option> Pengusaha </option>
+                        <option> Petani </option>
+                        <option> Tidak Bekerja </option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Penghasilan Perbulan </td>
+                    <td><select>
+                        <option> --Pilih-- </option>
+                        <option> Tidak Berpenghasilan </option>
+                        <option> Rp 0 - Rp 500.000 </option>
+                        <option> Rp 500.001 - Rp 1.000.000 </option>
+                        <option> Rp 1.000.001 - Rp1.500.000 </option>
+                        <option> Rp 1.500.001 - Rp2.500.000 </option>
+                        <option> Rp 2.500.001 - Rp4.500.000 </option>
+                        <option> Rp 4.500.001 - Rp7.500.000 </option>
+                        <option> Rp 7.500.001 - Rp10.000.000 </option>
+                        <option> > Rp 10.000.000 </option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nama Ibu</td>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <td> Pekerjaan </td>
+                    <td><select>
+                        <option> --Pilih-- </option>
+                        <option> PNS/TNI/Polri </option>
+                        <option> Pegawai Swasta </option>
+                        <option> Wiraswasta </option>
+                        <option> Pegawai BUMN </option>
+                        <option> Guru non PNS </option>
+                        <option> Dosen non PNS </option>
+                        <option> Pengusaha </option>
+                        <option> Petani </option>
+                        <option> Ibu Rumah Tangga </option>
+                        <option> Tidak Bekerja </option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Penghasilan Perbulan </td>
+                    <td><select>
+                        <option> --Pilih-- </option>
+                        <option> Tidak Berpenghasilan </option>
+                        <option> Rp 0 - Rp 500.000 </option>
+                        <option> Rp 500.001 - Rp 1.000.000 </option>
+                        <option> Rp 1.000.001 - Rp1.500.000 </option>
+                        <option> Rp 1.500.001 - Rp2.500.000 </option>
+                        <option> Rp 2.500.001 - Rp4.500.000 </option>
+                        <option> Rp 4.500.001 - Rp7.500.000 </option>
+                        <option> Rp 7.500.001 - Rp10.000.000 </option>
+                        <option> > Rp 10.000.000 </option>
+                    </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>No Hp Orangtua</td>
+                    <td><input type="number" required></td>
+                </tr>
+                <tr>
+                    <td>Alamat Orangtua</td>
+                    <td><textarea required></textarea></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Simpan">
+                        <input type="reset" value="Reset">
+                        <a href="Daftar.html" class="Next-button"><input type="button" value="Next"></a>
+                        <input type="button" value="Kembali" onclick="window.history.back();">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <footer>
+        <marquee><p>&copy; 2025 Lutfiah Sahira, Universitas Negeri Padang</p></marquee>
+    </footer>
+</body>
+</html>

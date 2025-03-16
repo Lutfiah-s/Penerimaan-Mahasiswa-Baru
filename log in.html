@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Mahasiswa Baru UNP</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Mengatur tinggi untuk memusatkan konten */
+        }
+        header {
+            position: relative;
+            color: #ffffff;
+            padding: 100px;
+            text-align: center;
+        }
+        .header-background {
+            background: url("unp.png") no-repeat center center/cover; 
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0055a5;
+            padding: 10px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+        .container {
+            width: 400px; /* Lebar tetap untuk tampilan login */
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Menambahkan sudut melengkung */
+            position: relative; /* Memastikan kontainer berada di atas latar belakang */
+            z-index: 1; /* Menempatkan kontainer di atas gambar */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Menghilangkan jarak antara sel */
+        }
+        td {
+            padding: 10px;
+            vertical-align: top; /* Menyelaraskan teks ke atas */
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px; /* Menambahkan sudut melengkung */
+            box-sizing: border-box; /* Menghitung padding dalam lebar */
+        }
+        input[type="submit"],
+        input[type="button"] {
+            background-color: #0055a5;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px; /* Menambahkan sudut melengkung */
+            cursor: pointer; /* Mengubah kursor saat hover */
+            margin-top: 10px; /* Menambahkan jarak antar tombol */
+            width: 100%; /* Membuat tombol lebar penuh */
+        }
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #003366; /* Mengubah warna saat hover */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #003366;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-background"></div>
+    </header>
+    <nav>
+        <h3 style="color: white;">Log In </Inp></h3>
+    </nav>
+    <div class="container">
+        <form action="" method="post">
+            <table>
+                <tr>
+                    <td>Nama</td>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a href="laporan.html" class="login-button"><input type="button" value="Log In"></a>
+                        <a href="index.html" class="Kembali-button"><input type="button" value="Kembali"></a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 Universitas Negeri Padang</p>
+    </footer>
+</body>
+</html>

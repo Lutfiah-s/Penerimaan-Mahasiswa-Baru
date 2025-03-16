@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Mahasiswa Baru UNP</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            position: relative;
+            color: #ffffff;
+            padding: 80px;
+        }
+        .header-background {
+            background: url("rektorat.jpg") no-repeat center center/cover; 
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        /* Add styles for the logo */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px; /* Adjust to desired size */
+            height: auto;   /* Maintain aspect ratio */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0055a5;
+            padding: 10px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Menambahkan sudut melengkung */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Menghilangkan jarak antara sel */
+        }
+        td {
+            padding: 10px;
+            vertical-align: top; /* Menyelaraskan teks ke atas */
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px; /* Menambahkan sudut melengkung */
+            box-sizing: border-box; /* Menghitung padding dalam lebar */
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px; /* Menambahkan jarak antara checkbox/radio dan label */
+        }
+        input[type="submit"],
+        input[type="reset"],
+        input[type="button"] {
+            background-color: #0055a5;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px; /* Menambahkan sudut melengkung */
+            cursor: pointer; /* Mengubah kursor saat hover */
+            margin-right: 10px; /* Menambahkan jarak antar tombol */
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="button"]:hover {
+            background-color: #003366; /* Mengubah warna saat hover */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #003366;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-background"></div>
+        <img src="logo_unp.png" alt="Logo UNP" class="logo"> 
+    </header>
+    <nav>
+        <h3><font color="white" face="arial">Form Pendaftaran</font></h3>
+    </nav>
+    <div class="container">
+        <form action="" method="post">
+            <h3><center>Universitas Negeri Padang</center></h3>
+            <table>
+                <tr>
+                    <td>Pilih Fakultas</td>
+                    <td>
+                        <select id="Fakultas" required onchange="updateUniversitas()">
+                            <option value="">Pilih</option>
+                            <option value="Fakultas Ilmu Pendidikan">Fakultas Ilmu Pendidikan</option>
+                            <option value="Fakultas Bahasa dan Seni">Fakultas Bahasa dan Seni</option>
+                            <option value="Fakultas Ekonomi Bisnis">Fakultas Ekonomi Bisnis</option>
+                            <option value="Fakultas Ilmu Sosial">Fakultas Ilmu Sosial</option>
+                            <option value="Fakultas Matematika dan Ilmu Pengetahuan Alam">Fakultas Matematika dan Ilmu Pengetahuan Alam</option>
+                            <option value="Fakultas Ilmu Keolahragaan">Fakultas Ilmu Keolahragaan</option>
+                            <option value="Fakultas Sekolah Vokasi">Fakultas Sekolah Vokasi</option>
+                            <option value="Fakultas Kedokteran">Fakultas Kedokteran</option>
+                            <option value="Fakultas Pariwisata dan Perhotelan">Fakultas Pariwisata dan Perhotelan</option>
+                            <option value="Fakultas Psikologi">Fakultas Psikologi</option>
+                            <option value="Fakultas Teknik">Fakultas Teknik</option>
+                            <option value="Fakultas Program Pasca Sarjana">Fakultas Program Pasca Sarjana</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pilih Prodi</td>
+                    <td>
+                        <select id="Prodi" required>
+                            <option value="">Pilih</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <a href="log in.html" class="submit-button"><input type="button" value="Simpan"></a>
+                        <input type="reset" value="Reset">
+                        <input type="button" value="Kembali" onclick="window.history.back();">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            function updateUniversitas() {
+                var Fakultas = document.getElementById("Fakultas").value;
+                var Prodi = document.getElementById("Prodi");
+
+                // Kosongkan opsi sebelumnya
+                Prodi.innerHTML = '<option value="">Pilih</option>';
+
+                // Menentukan opsi berdasarkan fakultas yang dipilih
+                if (Fakultas === "Fakultas Ilmu Pendidikan") {
+                    Prodi.innerHTML += '<option value="Pendidikan Guru Sekolah (S1)">Pendidikan Guru Sekolah (S1)</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Pendidikan Luar Sekolah (S1)">Pendidikan Pendidikan Luar Sekolah (S1)</option>';
+                    Prodi.innerHTML += '<option value="Bimbingan dan Konseling (S1)">Bimbingan dan Konseling (S1)</option>';
+                    Prodi.innerHTML += '<option value="Bimbingan dan Konseling (S2)">Bimbingan dan Konseling (S2)</option>';
+                    Prodi.innerHTML += '<option value="Bimbingan dan Konseling (S3)">Bimbingan dan Konseling (S3)</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Guru Pendidikan Anak Usia Dini (S1)">Pendidikan Guru Pendidikan Anak Usia Dini (S1)</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Guru Pendidikan Anak Usia Dini (S2)">Pendidikan Guru Pendidikan Anak Usia Dini (S2)</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Luar Biasa (S1)">Pendidikan Luar Biasa Dini (S1)</option>';
+                    Prodi.innerHTML += '<option value="Administrasi Pendidikan (S1)">Administrasi Pendidikan (S1)</option>';
+                    Prodi.innerHTML += '<option value="Administrasi Pendidikan (S2)">Administrasi Pendidikan (S2)</option>';
+                    Prodi.innerHTML += '<option value="Administrasi Pendidikan (S3)">Administrasi Pendidikan (S3)</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Dasar (S2)">Pendidikan (S2)</option>';
+                
+                } else if (Fakultas === "Fakultas Bahasa dan Seni") {
+                    Prodi.innerHTML += '<option value="info_perpustakaan">Informasi Perpustakaan dan Kearsipan (D3)</option>';
+                    Prodi.innerHTML += '<option value="komunikasi_visual">Desain Komunikasi Visual (S1) </option>';
+                    Prodi.innerHTML += '<option value="pendidikan_bahasa">Pendidikan Bahasa dan Sastra Indonesia (S1)</option>';
+                    Prodi.innerHTML += '<option value="pendidikan_bahasa">Pendidikan Bahasa dan Sastra Indonesia (S2)</option>';
+                    Prodi.innerHTML += '<option value="perpustakaan_ilmu">Perpustakaan dan Ilmu Informasi (S1) </option>';
+                    Prodi.innerHTML += '<option value="pendidikan_seni_rupa">Pendidikan Seni Rupa (S1) </option>';
+                    Prodi.innerHTML += '<option value="sastra_indonesia">Sastra Indonesia (S1) </option>';
+                    Prodi.innerHTML += '<option value="pendidikan_seni_drama">Pendidikan Seni Drama, Tari dan Musik (S1) </option>';
+                    Prodi.innerHTML += '<option value="pendidikan_bahasa_je">Pendidikan Bahasa Jepang (S1) </option>';
+                    Prodi.innerHTML += '<option value="pendidikan_bahasa_inggris">Pendidikan Bahasa Inggris (S1) </option>';
+                    Prodi.innerHTML += '<option value="pendidikan_bahasa_inggris">Pendidikan Bahasa Inggris (S2) </option>';
+                    Prodi.innerHTML += '<option value="sastra_inggris">Sastra Inggris (S1) </option>';
+                    Prodi.innerHTML += '<option value="pendidikan_musik">Pendidikan Musik (S1) </option>';
+                    Prodi.innerHTML += '<option value="pendidikan_tari">Pendidikan Tari (S1) </option>';
+                    Prodi.innerHTML += '<option value="pendidikan_keguruan">Pendidikan Keguruan Bahasa (S3) </option>';
+                
+                } else if (Fakultas === "Fakultas Ekonomi Bisnis") {
+                   // Adding options to Prodi
+                    Prodi.innerHTML += '<option value="Akuntansi">Akuntansi - D3</option>';
+                    Prodi.innerHTML += '<option value="Manajemen Pajak">Manajemen Pajak - D3</option>';
+                    Prodi.innerHTML += '<option value="Manajemen Perdagangan">Manajemen Perdagangan - D3</option>';
+                    Prodi.innerHTML += '<option value="Akuntansi S1">Akuntansi - S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Ekonomi">Pendidikan Ekonomi - S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Ekonomi">Pendidikan Ekonomi - S2</option>';
+                    Prodi.innerHTML += '<option value="Manajemen S1">Manajemen - S1 </option>';
+                    Prodi.innerHTML += '<option value="Manajemen S1">Manajemen - S2</option>';
+                    Prodi.innerHTML += '<option value="Ekonomi Pembangunan">Ekonomi Pembangunan - S1</option>';
+                    Prodi.innerHTML += '<option value="Ilmu Ekonomi">Ilmu Ekonomi - S2</option>';
+                    Prodi.innerHTML += '<option value="Kajian Lingkungan dan Pembangunan">Kajian Lingkungan dan Pembangunan - S3</option>';
+
+                } else if (Fakultas === "Fakultas Ilmu Sosial") {
+                    Prodi.innerHTML += '<option value="Pendidikan Geografi-S1">Pendidikan Geografi-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Geografi-S2">Pendidikan Geografi-S2</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Sejarah-S1">Pendidikan Sejarah-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Pancasila dan Kewarganegaraan-S1">Pendidikan Pancasila dan Kewarganegaraan-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Pancasila dan Kewarganegaraan-S2">Pendidikan Pancasila dan Kewarganegaraan-S2</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Keagamaan Islam-S1">Pendidikan Keagamaan Islam-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Sosiologi-S1">Pendidikan Sosiologi-S1</option>';
+                    Prodi.innerHTML += '<option value="Geografi-S1">Geografi-S1</option>';
+                    Prodi.innerHTML += '<option value="Ilmu Administrasi Negara-S1">Ilmu Administrasi Negara-S1</option>';
+                    Prodi.innerHTML += '<option value="Administrasi Publik-S2">Administrasi Publik-S2</option>';
+
+                } else if (Fakultas === "Fakultas Matematika dan Ilmu Pengetahuan Alam") {
+                    Prodi.innerHTML += '<option value="Matematika-S1">Matematika-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Matematika-S1">Pendidikan Matematika-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Matematika-S2">Matematika-S2</option>';
+                    Prodi.innerHTML += '<option value="Biologi-S1">Biologi-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Biologi-S1">Pendidikan Biologi-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Biologi-S2">Pendidikan Biologi-S2</option>';
+                    Prodi.innerHTML += '<option value="Fisika-S2">Fisika-S2</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Fisika-S1">Pendidikan Fisika-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Fisika-S2">Pendidikan Fisika-S2</option>';
+                    Prodi.innerHTML += '<option value="Fisika-S1">Fisika-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Kimia-S1">Pendidikan Kimia-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Kimia-S2">Pendidikan Kimia-S2</option>';
+                    Prodi.innerHTML += '<option value="Kimia-S1">Kimia-S1</option>';
+                    Prodi.innerHTML += '<option value="Statistika-D3">Statistika-D3</option>';
+                    Prodi.innerHTML += '<option value="Statistika-S1">Statistika-S1</option>';
+                    Prodi.innerHTML += '<option value="Aktuaria-S1">Aktuaria-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan IPA-S1">Pendidikan IPA-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan IPA-S3">Pendidikan IPA-S3</option>';
+                    Prodi.innerHTML += '<option value="Agroteknologi-S">Agroteknologi-S1</option>';
+                    Prodi.innerHTML += '<option value="Peternakan-S1">Peternakan-S1</option>';
+                    Prodi.innerHTML += '<option value="Agribisnis-S1">Agribisnis-S1</option>';
+
+                } else if (Fakultas === "Fakultas Ilmu Keolahragaan") {
+                    Prodi.innerHTML += '<option value="Pendidikan Kepelatihan Olahraga-S1">Pendidikan Kepelatihan Olahraga-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Jasmani, Kesehatan dan Rekreasi-S1">Pendidikan Jasmani, Kesehatan dan Rekreasi-S1</option>';
+                    Prodi.innerHTML += '<option value="Ilmu Keolahragaan-S1">Ilmu Keolahragaan-S1</option>';
+                    Prodi.innerHTML += '<option value="Magister Pendidikan Olahraga-S2">Magister Pendidikan Olahraga-S2</option>';
+                    Prodi.innerHTML += '<option value="Magister Ilmu Keolahragaan-S2">Magister Ilmu Keolahragaan-S2</option>';
+                    Prodi.innerHTML += '<option value="Doktor Ilmu Keolahragaan-S3">Doktor Ilmu Keolahragaan-S3</option>';
+
+                } else if (Fakultas === "Fakultas Sekolah Vokasi") {
+                    Prodi.innerHTML += '<option value="D4 Animasi">D4 Animasi</option>';
+                    Prodi.innerHTML += '<option value="D4 Penginderaan Jauh dan Sistem Informasi Geografi">D4 Penginderaan Jauh dan Sistem Informasi Geografi</option>';
+                    Prodi.innerHTML += '<option value="D3 Ilmu Perpustakaan dan Kearsipan">D3 Ilmu Perpustakaan dan Kearsipan</option>';
+                    Prodi.innerHTML += '<option value="D4 Teknologi Kosmetik">D4 Teknologi Kosmetik</option>';
+                    Prodi.innerHTML += '<option value="D3 Manajemen Pajak">D3 Manajemen Pajak</option>';
+                    Prodi.innerHTML += '<option value="D3 Manajemen Perdagangan">D3 Manajemen Perdagangan</option>';
+                    Prodi.innerHTML += '<option value="D4 Akutansi">D4 Akutansi</option>';
+                    Prodi.innerHTML += '<option value="D3 Teknik Pertambangan (PSDKU Sawahlunto)">D3 Teknik Pertambangan (PSDKU Sawahlunto)</option>';
+                    Prodi.innerHTML += '<option value="D3 Teknik Otomotif (PSDKU Sawahlunto)">D3 Teknik Otomotif (PSDKU Sawahlunto)</option>';
+                    
+
+                } else if (Fakultas === "Fakultas Kedokteran") {
+                    Prodi.innerHTML += '<option value="Kedokteran-S1">Kedokteran-S1</option>';
+                    Prodi.innerHTML += '<option value="Kedokteran Hewan-S1">Kedokteran Hewan-S1</option>';
+
+                } else if (Fakultas === "Fakultas Pariwisata dan Perhotelan") {
+                    Prodi.innerHTML += '<option value="Tata Busana (D3)">Tata Busana (D3)</option>';
+                    Prodi.innerHTML += '<option value="Tata  (D3)">Tata  (D3)</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Tata Rias dan Kecantikan (D4)">Pendidikan Tata Rias dan Kecantikan (D4)</option>';
+                    Prodi.innerHTML += '<option value="Manajemen Perhotelan (D4)">Manajemen Perhotelan (D4)</option>';
+                    Prodi.innerHTML += '<option value="Ilmu Kesejahteraan Keluarga (S1)">Ilmu Kesejahteraan Keluarga(S1)</option>';
+                
+                } else if (Fakultas === "Fakultas Psikologi") {
+                    Prodi.innerHTML += '<option value="Psikologi-S1">Psikologi-S1</option>';
+                    Prodi.innerHTML += '<option value="Keperawatan-S1">Keperawatan-S1</option>';
+                
+                } else if (Fakultas === "Fakultas Teknik") {
+                    Prodi.innerHTML += '<option value="Pendidikan Teknik Bangunan-S1">Pendidikan Teknik Bangunan-S1</option>';
+                    Prodi.innerHTML += '<option value="Teknik Sipil-S1">Teknik Sipil-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Teknik Mesin-S1">Pendidikan Teknik Mesin-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Teknik Elektro-S1">Pendidikan Teknik Elektro-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Teknik Informatika-S1">Teknik Informatika-S1</option>';
+                    Prodi.innerHTML += '<option value="Informatika-S1">Teknik Informatika-S1</option>';
+                    Prodi.innerHTML += '<option value="Teknik Otomotif-D3">Teknik Otomotif-D3</option>';
+                    Prodi.innerHTML += '<option value="Teknik Mesin-D3">Teknik Mesin-D3</option>';
+                    Prodi.innerHTML += '<option value="Teknik Mesin-S1">Teknik Mesin-S1</option>';
+                    Prodi.innerHTML += '<option value="Teknik Pertambangan-S1">Teknik Pertambangan-S1</option>';
+                    Prodi.innerHTML += '<option value="Teknik Pertambangan-D3">Teknik Pertambangan-D3</option>';
+                    Prodi.innerHTML += '<option value="Teknik Listrik-D3">Teknik Listrik-D3</option>';
+                    Prodi.innerHTML += '<option value="Teknik Elektronika-D3">Teknik Elektronika-D3</option>';
+                    Prodi.innerHTML += '<option value="Teknik Sipil Bangunan-D3">Teknik Sipil Bangunan-D3</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Teknik Otomotif-S1">Pendidikan Teknik Otomotif-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Teknik Elektronika-S1">Pendidikan Teknik Elektronika-S1</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Teknologi dan Kejuruan-S2">Pendidikan Teknologi dan Kejuruan-S2</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Teknologi dan Kejuruan-S3">Pendidikan Teknologi dan Kejuruan-S3</option>';
+
+                } else if (Fakultas === "Fakultas Program Pasca Sarjana") {
+                    Prodi.innerHTML += '<option value=" Ilmu Pendidikan-S3">Ilmu Pendidikan-S3</option>';
+                    Prodi.innerHTML += '<option value="Ilmu Lingkungan-S2">Ilmu Lingkungan-S2</option>';
+                    Prodi.innerHTML += '<option value="Ilmu Lingkungan-S3">Ilmu Lingkungan-S3</option>';
+                    Prodi.innerHTML += '<option value="Teknologi Pendidikan-S2">Teknologi Pendidikan-S2</option>';
+                    Prodi.innerHTML += '<option value="Pendidikan Ilmu Pengetahuan Sosial-S2">Pendidikan Ilmu Pengetahuan Sosial-S2</option>';
+                }
+            }
+        </script>
+    </div>
+    <footer>
+        <marquee><p>&copy; 2025 Lutfiah Sahira, Universitas Negeri Padang</p></marquee>
+    </footer>
+</body>
+</html>

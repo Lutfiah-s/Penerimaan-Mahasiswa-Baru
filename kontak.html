@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Kontak - UNP</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Anda bisa menambahkan CSS di sini -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .contact-info {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info h2 {
+            margin-top: 0;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #003366;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Kontak Kami</h1>
+    </header>
+
+    <div class="contact-info">
+        <h2>Informasi Kontak</h2>
+        <p>Lutfiah Sahira</p>
+        <p>Universitas Negeri Padang</p>
+        <p>Alamat: Jl. Prof. Dr. Hamka, Air Tawar, Padang, Sumatera Barat, Indonesia</p>
+        <p>Telepon: (0751) 123456</p>
+        <p>Email: <a href="mailto:info@unp.ac.id">info@unp.ac.id</a></p>
+    </div>
+
+    <h2>Kirim Pesan</h2>
+    <form action="submit_form.php" method="post">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Pesan:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <input type="submit" value="Kirim Pesan">
+    </form>
+
+</body>
+</html>
